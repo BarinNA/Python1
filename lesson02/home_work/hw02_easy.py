@@ -33,7 +33,7 @@ b = [3,5,23]
 print(a, "\n", b)
 
 for b_i in b:
-    while a.count(b_i) != 0:
+    while b_i in a:
         a.remove(b_i)    
      
 print(a)           
