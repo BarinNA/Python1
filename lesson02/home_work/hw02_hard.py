@@ -1,9 +1,14 @@
 # Задание-1: уравнение прямой вида y = kx + b задано в виде строки.
 # Определить координату y точки с заданной координатой x.
+print("Задание - 1","\n")
 
 equation = 'y = -12x + 11111140.2121'
 x = 2.5
 # вычислите и выведите y
+d = equation[3:]
+q = d.replace("x"," * " + str(x))
+
+print("y = ", eval(q))
 
 
 # Задание-2: Дата задана в виде строки формата 'dd.mm.yyyy'.
@@ -24,6 +29,27 @@ date = '01.22.1001'
 date = '1.12.1001'
 date = '-2.10.3001'
 
+print("Задание - 2","\n")
+
+date = input()
+
+lst = date.split(".")
+error = 0 
+
+if not int(lst[0]) in range(1,32) or len(lst[0]) != 2:
+    print("date not correct")
+    error = 1
+
+if len(lst[1]) != 2 or not int(lst[1]) in range(1,13):
+    print("month not correct")
+    error = 1
+
+if len(lst[2]) != 4 or not int(lst[2]) in range(1, 10000):
+    print("year not correct")
+    error = 1
+
+if not error:
+    print("date is correct")
 
 # Задание-3: "Перевёрнутая башня" (Задача олимпиадного уровня)
 #
@@ -54,3 +80,25 @@ date = '-2.10.3001'
 #
 # Вход: 11
 # Выход: 5 3
+
+print("Задание - 2","\n")
+
+n = int(input("Вход: "))
+
+i = 0
+fl = 1
+floor = 1
+br = 0
+
+while not br:
+    for f in range(1,fl + 1):
+        for j in range(1, fl + 1):
+            i += 1
+            if i == n:
+                print("Выход: {0} {1}".format(floor,j))
+                br = 1
+                break 
+        if br:
+            break 
+        floor += 1          
+    fl += 1
