@@ -4,14 +4,17 @@
 # Округление должно происходить по математическим правилам (0.6 --> 1, 0.4 --> 0).
 # Для решения задачи не используйте встроенные функции и функции из модуля math.
 
+"""
 def my_round(number, ndigits):
-    pass
+    a = 10
+
+    
 
 
 print(my_round(2.1234567, 5))
 print(my_round(2.1999967, 5))
 print(my_round(2.9999967, 5))
-
+"""
 
 # Задание-2:
 # Дан шестизначный номер билета. Определить, является ли билет счастливым.
@@ -20,7 +23,20 @@ print(my_round(2.9999967, 5))
 # !!!P.S.: функция не должна НИЧЕГО print'ить
 
 def lucky_ticket(ticket_number):
-    pass
+    st = str(ticket_number)
+
+    s1 = 0 
+    for i in st[:2]:
+        s1 += int(i)
+
+    s2 = 0 
+    for i in st[-2:]:
+        s2 += int(i)    
+
+    if s1 == s2:
+        return "lucky"
+    else:
+        return "not lucky"    
 
 
 print(lucky_ticket(123006))
