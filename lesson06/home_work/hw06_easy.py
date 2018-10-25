@@ -1,6 +1,14 @@
+import module_easy
+
 # Задача-1: Написать класс для фигуры-треугольника, заданного координатами трех точек.
 # Определить методы, позволяющие вычислить: площадь, высоту и периметр фигуры.
 
+
+triangle = module_easy.triangle("-5,2","7,-7","5,7")
+
+print("Square = {}".format(triangle.getsquare()))
+print("Perimetr = {}".format(triangle.getperimetr()))
+print("hight = {}".format(triangle.gethight()))
 
 # Задача-2: Написать Класс "Равнобочная трапеция", заданной координатами 4-х точек.
 # Предусмотреть в классе методы:
