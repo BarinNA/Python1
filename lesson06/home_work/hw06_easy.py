@@ -15,3 +15,8 @@ print("hight = {}".format(triangle.gethight()))
 # проверка, является ли фигура равнобочной трапецией;
 # вычисления: длины сторон, периметр, площадь.
 
+trapezium = module_easy.Trapezium("1,1","2,4","5,4","6,1")
+print(trapezium.check())
+print(trapezium.sideslength())
+print(trapezium.perimetr())
+print(trapezium.square())
