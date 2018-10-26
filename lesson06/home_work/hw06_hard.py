@@ -10,3 +10,33 @@
 # С использованием классов.
 # Реализуйте классы сотрудников так, чтобы на вход функции-конструктора
 # каждый работник получал строку из файла
+
+import module_hard
+import os
+
+
+
+#Прочитаем сотрудников
+path_workers = os.path.join(os.getcwd(),'lesson06','home_work','data', 'workers.txt')  
+info = module_hard.readfile(path_workers)
+
+Workers = module_hard.workers()
+
+for l in info[1:]:
+    worker = module_hard.worker(l)
+    Workers.add_worker(worker)
+
+#Прочитаем табель
+path_table = os.path.join(os.getcwd(),'lesson06','home_work','data', 'hours_of.txt')  
+info = module_hard.readfile(path_table)
+
+for l in info[1:]:
+    table = module_hard.table(l, Workers)
+    Workers.add_table(table)
+
+Workers.calculate()
+Workers.printcalculation()
+
+
+
+    
